@@ -1,0 +1,78 @@
+<mat-toolbar color="primary">
+  <span>ShopEase</span>
+  <span class="spacer"></span>
+
+  <!-- Search Bar -->
+  <mat-form-field appearance="outline" class="search-bar">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Search products">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <div class="nav-links">
+    <a mat-button routerLink="/products">Products</a>
+    <a mat-button routerLink="/cart">Cart</a>
+    <a mat-button routerLink="/orders">Orders</a>
+    <a mat-button routerLink="/login">Login</a>
+    <a mat-button routerLink="/register">Register</a>
+    <a mat-button routerLink="/admin">Admin</a>
+  </div>
+
+  <button mat-icon-button class="cart-icon-button" aria-label="Shopping Cart" routerLink="/cart">
+    <mat-icon matBadge="{{cartItemCount}}" matBadgeColor="warn">shopping_cart</mat-icon>
+  </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/profile">
+      <mat-icon>person</mat-icon>
+      <span>Profile</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section about-us">
+      <h3>About Us</h3>
+      <p>ShopEase is your one-stop shop for all your needs. We offer a wide variety of products at competitive prices.</p>
+    </div>
+    <div class="footer-section quick-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-section contact-info">
+      <h3>Contact Info</h3>
+      <p>Email: info@shopease.com</p>
+      <p>Phone: +1 123 456 7890</p>
+      <p>Address: 123 Shop Lane, Retail City, ST 45678</p>
+    </div>
+    <div class="footer-section social-links">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><mat-icon>facebook</mat-icon></a>
+        <a href="#"><mat-icon>twitter</mat-icon></a>
+        <a href="#"><mat-icon>instagram</mat-icon></a>
+        <a href="#"><mat-icon>linkedin</mat-icon></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 ShopEase. All rights reserved.</p>
+  </div>
+</footer>

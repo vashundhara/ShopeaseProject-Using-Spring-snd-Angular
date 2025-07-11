@@ -1,0 +1,19 @@
+<div class="test-container">
+  <h2>Product Service Test</h2>
+  <button mat-raised-button color="primary" (click)="testProductService()">
+    Test Product Service
+  </button>
+  <div *ngIf="products" class="result-container">
+    <h3>Products:</h3>
+    <pre>{{ products | json }}</pre>
+  </div>
+
+  <h2>Cart Service Test</h2>
+  <button mat-raised-button color="primary" (click)="testCartService()">
+    Test Cart Service
+  </button>
+  <div *ngIf="cartItems" class="result-container">
+    <h3>Cart Items:</h3>
+    <pre>{{ cartItems | json }}</pre>
+  </div>
+</div> 

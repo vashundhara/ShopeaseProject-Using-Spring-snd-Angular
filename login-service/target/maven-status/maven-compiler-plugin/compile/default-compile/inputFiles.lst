@@ -1,0 +1,12 @@
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/LoginServiceApplication.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/config/SecurityConfig.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/controller/AuthController.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/dto/AuthRequest.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/dto/AuthResponse.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/model/User.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/model/UserRole.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/repository/UserRepository.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/security/JwtRequestFilter.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/security/JwtUtil.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/service/AuthService.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/login-service/src/main/java/com/shopease/login/service/CustomUserDetailsService.java

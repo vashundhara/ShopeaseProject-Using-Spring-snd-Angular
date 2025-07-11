@@ -1,0 +1,28 @@
+<div class="products-page-container">
+  <h2>Products</h2>
+  <div class="product-list-wrapper">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.imageUrl" alt="{{ product.name }}">
+      <div class="product-details">
+        <h3>{{ product.name }}</h3>
+        <div class="rating">★★★★☆</div>
+        <div class="price-info">
+          <p class="price">${{ product.price.toFixed(2) }}</p>
+          <!-- Placeholder for discount/original price -->
+          <!-- Example: <p class="original-price">${{ (product.price * 1.2).toFixed(2) }}</p> -->
+          <!-- Example: <span class="discount">20% OFF</span> -->
+        </div>
+        <!-- Add placeholder for other icons here later (e.g., wishlist) -->
+        <button mat-raised-button color="primary">Add to Cart</button>
+      </div>
+      
+      <!-- Hover Icons/Actions Placeholder -->
+      <div class="product-actions">
+        <button mat-icon-button><mat-icon>favorite_border</mat-icon></button>
+        <button mat-icon-button><mat-icon>visibility</mat-icon></button>
+        <!-- Add other actions as needed -->
+      </div>
+
+    </div>
+  </div>
+</div>

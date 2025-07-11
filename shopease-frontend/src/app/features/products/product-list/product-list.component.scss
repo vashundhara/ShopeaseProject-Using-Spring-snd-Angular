@@ -1,0 +1,305 @@
+// Styles for individual product cards
+.product-card {
+  border: none; /* Remove default border */
+  border-radius: 15px; /* More rounded corners */
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer and more spread out shadow */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-background); /* Use card background color */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.product-card:hover {
+  transform: translateY(-8px); /* Lift more on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px; /* Slightly increased height */
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out; /* Add transition */
+  border-top-left-radius: 15px; /* Match card border-radius */
+  border-top-right-radius: 15px; /* Match card border-radius */
+}
+
+.product-card:hover img {
+  transform: scale(1.08); /* Slightly more enlarge image on hover */
+}
+
+.product-details {
+  padding: 20px; /* Increased padding around details */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.product-details h3 {
+  margin-top: 0;
+  margin-bottom: 10px; /* Adjust margin below title */
+  font-size: 1.4em; /* Slightly larger font size */
+  font-weight: 700; /* Bolder font weight */
+  color: var(--text-color); /* Use primary text color */
+  line-height: 1.3;
+}
+
+.product-details .price {
+  font-size: 1.5em;
+  color: var(--primary-color);
+  margin-bottom: 12px; /* Adjust margin below price */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.price-info {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 15px; /* Adjust margin below price info block */
+  flex-wrap: wrap;
+}
+
+.price-info .price {
+  font-size: 1.6em; /* Larger price font size */
+  color: var(--primary-dark-color); /* Darker primary color for price */
+  margin-bottom: 0;
+  margin-right: 10px; /* Increased margin */
+  font-weight: 800; /* Extra bold */
+}
+
+.price-info .original-price {
+  text-decoration: line-through;
+  color: var(--secondary-text-color); /* Use secondary text color */
+  font-size: 1.1em; /* Slightly larger */
+  margin-right: 10px; /* Increased margin */
+  line-height: 1.2;
+}
+
+.price-info .discount {
+  background-color: var(--accent-color); /* Use accent color for background */
+  color: white; /* White text for contrast */
+  font-size: 1em; /* Slightly larger font size */
+  padding: 4px 10px; /* Increased padding */
+  border-radius: 5px; /* More rounded */
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-left: 10px; /* Add margin-left to separate from price */
+}
+
+.product-details .rating {
+  color: var(--accent-color); /* Use accent color for stars */
+  margin-bottom: 15px; /* Adjust margin below rating */
+  font-size: 1.2em; /* Slightly larger font size */
+  line-height: 1.2;
+}
+
+.product-details .additional-info {
+  margin-bottom: 20px; /* Adjust margin below additional info */
+  font-size: 1em;
+  color: var(--secondary-text-color);
+  line-height: 1.5;
+}
+
+.product-details button {
+  margin-top: auto;
+  width: 100%;
+  padding: 14px 20px; /* Increased padding */
+  font-size: 1.2em; /* Larger font size */
+  font-weight: 700;
+  border-radius: 8px; /* More rounded */
+  text-transform: uppercase;
+  background-color: var(--primary-color); /* Use primary color */
+  color: white;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.product-details button:hover {
+  background-color: var(--primary-dark-color); /* Darken primary color on hover */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+/* Styles for Hover Actions */
+.product-actions {
+  position: absolute;
+  top: 15px; /* Adjusted position */
+  right: 15px; /* Adjusted position */
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Increased gap */
+  opacity: 0; /* Initially hide */
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1; /* Ensure they are above the image */
+}
+
+.product-card:hover .product-actions {
+  opacity: 1; /* Show on hover */
+}
+
+.product-actions button {
+  background-color: rgba(255, 255, 255, 0.95); /* Less transparent white background */
+  border-radius: 50%;
+  width: 45px; /* Slightly larger button size */
+  height: 45px; /* Slightly larger button size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  color: var(--secondary-text-color); /* Use secondary text color */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.product-actions button:hover {
+  background-color: var(--accent-color); /* Use accent color on hover */
+  color: white; /* White icon on hover */
+  transform: scale(1.1); /* Scale icon button on hover */
+}
+
+.product-actions button mat-icon {
+  font-size: 1.5em; /* Slightly larger icon size */
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-actions button:hover mat-icon {
+  transform: scale(1.1); /* Slightly scale icon on hover */
+}
+
+// Styles for the product list container
+.product-list-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px; /* Increased gap between products */
+  padding: 20px 0; /* Add some vertical padding */
+  justify-items: center;
+}
+
+// Styles for the main container and heading on the products page
+.products-page-container {
+  padding: 50px 20px; /* Match home page section padding */
+  text-align: center; /* Center align heading */
+  background-color: var(--background-color); /* Use light grey background */
+  margin: 20px auto; /* Add some top and bottom margin */
+  max-width: 1200px; /* Match content area max width */
+}
+
+.products-page-container h2 {
+  margin-bottom: 30px; /* Match home page section heading margin */
+  font-size: 2.2em; /* Match home page section heading size */
+  color: var(--text-color); /* Use dark text color */
+  font-weight: 700; /* Bolder font weight */
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .product-card {
+    border-radius: 10px;
+  }
+
+  .product-card img {
+    height: 180px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .product-details {
+    padding: 15px;
+  }
+
+  .product-details h3 {
+    font-size: 1.2em;
+  }
+
+  .product-details .rating {
+    font-size: 1em;
+  }
+
+  .price-info .price {
+    font-size: 1.4em;
+  }
+
+  .price-info .original-price {
+    font-size: 0.9em;
+  }
+
+  .price-info .discount {
+    font-size: 0.8em;
+    padding: 3px 8px;
+  }
+
+  .product-details button {
+    padding: 10px 15px;
+    font-size: 1em;
+  }
+
+  .product-actions {
+    top: 10px;
+    right: 10px;
+    gap: 5px;
+  }
+
+  .product-actions button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .product-actions button mat-icon {
+    font-size: 1.3em;
+  }
+
+  .product-list-wrapper {
+    gap: 20px;
+    padding: 15px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    border-radius: 8px;
+  }
+
+  .product-card img {
+    height: 150px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .product-details {
+    padding: 10px;
+  }
+
+  .product-details h3 {
+    font-size: 1.1em;
+  }
+
+  .product-details .price {
+    font-size: 1.3em;
+  }
+
+  .product-details .original-price {
+    font-size: 0.8em;
+  }
+
+  .product-details .rating {
+    font-size: 0.9em;
+  }
+
+  .product-details button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+
+  .product-actions button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .product-actions button mat-icon {
+    font-size: 1.2em;
+  }
+
+  .product-list-wrapper {
+    gap: 15px;
+  }
+}

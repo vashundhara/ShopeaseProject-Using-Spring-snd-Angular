@@ -1,0 +1,10 @@
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/cart-service/src/main/java/com/shopease/cart/exception/ErrorResponse.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/cart-service/src/main/java/com/shopease/cart/entity/ShoppingCart.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/cart-service/src/main/java/com/shopease/cart/exception/GlobalExceptionHandler.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/cart-service/src/main/java/com/shopease/cart/repository/CartRepository.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/cart-service/src/main/java/com/shopease/cart/entity/CartItem.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/cart-service/src/main/java/com/shopease/cart/controller/CartController.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/cart-service/src/main/java/com/shopease/cart/exception/CartItemNotFoundException.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/cart-service/src/main/java/com/shopease/cart/repository/ShoppingCartRepository.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/cart-service/src/main/java/com/shopease/cart/CartServiceApplication.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/cart-service/src/main/java/com/shopease/cart/service/CartService.java

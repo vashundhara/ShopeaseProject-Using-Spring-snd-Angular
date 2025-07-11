@@ -1,0 +1,47 @@
+<!-- Cart Container -->
+<div class="cart-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Shopping Cart</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div *ngIf="loading" class="loading-container">
+        <mat-spinner></mat-spinner>
+      </div>
+
+      <div *ngIf="error" class="error-message">
+        {{ error }}
+      </div>
+
+      <div *ngIf="!loading && !error">
+        <div *ngIf="cartItems.length === 0" class="empty-cart">
+          <p>Your cart is empty</p>
+          <button mat-raised-button color="primary" routerLink="/products">
+            Continue Shopping
+          </button>
+        </div>
+
+        <table style="width: 100%; margin-top: 16px;">
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+          <tr *ngFor="let item of cartItems">
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.price | currency }}</td>
+          </tr>
+        </table>
+
+        <div style="margin-top: 32px; text-align: right;">
+          <!-- The Proceed to Checkout button is here -->
+          <button mat-raised-button color="primary" (click)="proceedToCheckout()">
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div> 

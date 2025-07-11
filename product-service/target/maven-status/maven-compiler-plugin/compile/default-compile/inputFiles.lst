@@ -1,0 +1,8 @@
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/product-service/src/main/java/com/shopease/product/ProductServiceApplication.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/product-service/src/main/java/com/shopease/product/repository/ProductRepository.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/product-service/src/main/java/com/shopease/product/exception/ErrorResponse.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/product-service/src/main/java/com/shopease/product/exception/GlobalExceptionHandler.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/product-service/src/main/java/com/shopease/product/entity/Product.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/product-service/src/main/java/com/shopease/product/exception/ProductNotFoundException.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/product-service/src/main/java/com/shopease/product/service/ProductService.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/product-service/src/main/java/com/shopease/product/controller/ProductController.java

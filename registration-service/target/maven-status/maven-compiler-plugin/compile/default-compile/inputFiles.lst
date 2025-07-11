@@ -1,0 +1,8 @@
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/registration-service/src/main/java/com/shopease/registration/RegistrationServiceApplication.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/registration-service/src/main/java/com/shopease/registration/config/SecurityConfig.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/registration-service/src/main/java/com/shopease/registration/controller/UserController.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/registration-service/src/main/java/com/shopease/registration/exception/RegistrationException.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/registration-service/src/main/java/com/shopease/registration/model/User.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/registration-service/src/main/java/com/shopease/registration/model/UserRole.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/registration-service/src/main/java/com/shopease/registration/repository/UserRepository.java
+/Users/vasundharagoour/Downloads/shopease-pre-final--main/registration-service/src/main/java/com/shopease/registration/service/UserService.java

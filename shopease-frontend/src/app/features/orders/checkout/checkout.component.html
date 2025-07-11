@@ -1,0 +1,117 @@
+<div class="checkout-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Checkout</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div *ngIf="loading" class="loading-container">
+        <mat-spinner diameter="40"></mat-spinner>
+      </div>
+
+      <div *ngIf="!loading && !paymentInitiated && !paymentConfirmed">
+        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+          <div class="checkout-sections">
+            <!-- Order Summary -->
+            <div class="order-summary">
+              <h3>Order Summary</h3>
+              <div class="cart-items">
+                <div *ngFor="let item of cartItems" class="cart-item">
+                  <span class="item-name">{{ item.productName }}</span>
+                  <span class="item-quantity">x{{ item.quantity }}</span>
+                  <span class="item-price">{{ item.price * item.quantity | currency }}</span>
+                </div>
+              </div>
+              <div class="total-amount">
+                <h4>Total Amount: {{ totalAmount | currency }}</h4>
+              </div>
+            </div>
+
+            <!-- Shipping Information -->
+            <div class="form-section">
+              <h3>Shipping Information</h3>
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Shipping Address</mat-label>
+                <textarea matInput formControlName="shippingAddress" rows="3"
+                          placeholder="Enter your shipping address"></textarea>
+                <mat-error *ngIf="checkoutForm.get('shippingAddress')?.invalid">
+                  {{ getErrorMessage('shippingAddress') }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <!-- Billing Information -->
+            <div class="form-section">
+              <h3>Billing Information</h3>
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Billing Address</mat-label>
+                <textarea matInput formControlName="billingAddress" rows="3"
+                          placeholder="Enter your billing address"></textarea>
+                <mat-error *ngIf="checkoutForm.get('billingAddress')?.invalid">
+                  {{ getErrorMessage('billingAddress') }}
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Payment Method</mat-label>
+                <mat-select formControlName="paymentMethod">
+                  <!-- Keep other options for now, but QR_CODE is default in TS -->
+                  <mat-option value="QR_CODE">QR Code Payment</mat-option>
+                  <mat-option value="CREDIT_CARD">Credit Card</mat-option>
+                  <mat-option value="DEBIT_CARD">Debit Card</mat-option>
+                  <mat-option value="PAYPAL">PayPal</mat-option>
+                </mat-select>
+                <mat-error *ngIf="checkoutForm.get('paymentMethod')?.invalid">
+                  {{ getErrorMessage('paymentMethod') }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <button mat-button type="button" routerLink="/cart">Back to Cart</button>
+            <button mat-raised-button color="primary" type="submit"
+                    [disabled]="checkoutForm.invalid || loading">
+              <mat-spinner diameter="20" *ngIf="loading"></mat-spinner>
+              <span *ngIf="!loading">Initiate Payment</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Payment Initiated State -->
+      <div *ngIf="!loading && paymentInitiated && !paymentConfirmed" class="payment-qr-section">
+        <h3>Scan to Pay</h3>
+        <p>Please scan the QR code below using your preferred payment app.</p>
+        <!-- QR Code Display -->
+        <div class="qr-code-container">
+          <qrcode
+            *ngIf="paymentDetails?.qr_code_image"
+            [qrdata]="paymentDetails.qr_code_image"
+            [width]="200"
+            [errorCorrectionLevel]="'M'"
+            elementType="img">
+          </qrcode>
+          <div *ngIf="!paymentDetails?.qr_code_image" class="qr-code-placeholder">
+            <img src="https://via.placeholder.com/200?text=QR+Code+Here" alt="Payment QR Code">
+          </div>
+        </div>
+        <p>Amount: {{ totalAmount | currency }}</p>
+        <p *ngIf="paymentDetails?.id">Order ID: {{ paymentDetails.id }}</p>
+        <button mat-raised-button color="accent" (click)="confirmPaymentAndPlaceOrder()" [disabled]="loading">
+          <mat-spinner diameter="20" *ngIf="loading"></mat-spinner>
+          <span *ngIf="!loading">Payment Done</span>
+        </button>
+        <button mat-button (click)="paymentInitiated = false" [disabled]="loading">Cancel Payment</button>
+      </div>
+
+      <!-- Payment Confirmed State -->
+      <div *ngIf="!loading && paymentConfirmed" class="payment-success-section">
+        <h3>Payment Successful!</h3>
+        <p>Your order has been placed successfully and is being processed.</p>
+        <button mat-raised-button color="primary" routerLink="/orders">View My Orders</button>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div> 

@@ -1,0 +1,75 @@
+.order-list-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+mat-card {
+  margin-bottom: 20px;
+}
+
+mat-card-header {
+  margin-bottom: 20px;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.error-message {
+  color: #f44336;
+  padding: 16px;
+  text-align: center;
+}
+
+.order-table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mat-column-id {
+  width: 100px;
+}
+
+.mat-column-totalAmount {
+  width: 150px;
+}
+
+.mat-column-status {
+  width: 150px;
+}
+
+.mat-column-createdAt {
+  width: 200px;
+}
+
+.mat-column-actions {
+  width: 100px;
+  text-align: center;
+}
+
+.no-orders {
+  text-align: center;
+  padding: 40px;
+  
+  p {
+    margin-bottom: 20px;
+    color: #666;
+  }
+}
+
+::ng-deep {
+  .mat-chip {
+    &.mat-primary {
+      background-color: #1976d2;
+    }
+    &.mat-accent {
+      background-color: #ff9800;
+    }
+    &.mat-warn {
+      background-color: #f44336;
+    }
+  }
+}
